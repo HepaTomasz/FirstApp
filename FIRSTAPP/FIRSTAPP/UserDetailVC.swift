@@ -8,8 +8,10 @@
 
 import UIKit
 
-class UserDetailVC: UIViewController {
 
+class UserDetailVC: UIViewController {
+    
+    @IBOutlet weak var NavigationBar: UINavigationItem!
     @IBOutlet weak var nameTxtField: UITextField!
     @IBOutlet weak var lastNameTxtField: UITextField!
     @IBOutlet weak var btnDate: UIButton!
@@ -17,9 +19,9 @@ class UserDetailVC: UIViewController {
     
     var birthday = Date()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NavigationBar.title = "User Detail VC"
         // Do any additional setup after loading the view, typically from a nib.
     }
 
