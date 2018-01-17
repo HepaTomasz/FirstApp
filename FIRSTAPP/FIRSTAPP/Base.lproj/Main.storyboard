@@ -26,9 +26,6 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="MyFirstCell"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="dPl-5c-9Ee"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -71,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKr-NU-8hZ">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" borderStyle="bezel" placeholder="Please type your first name." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ftz-cz-nEB">
                                         <rect key="frame" x="25" y="36" width="364" height="22"/>
@@ -150,5 +147,51 @@
             </objects>
             <point key="canvasLocation" x="181" y="143"/>
         </scene>
+        <!--Image View Controller-->
+        <scene sceneID="xiH-A9-kxu">
+            <objects>
+                <viewController storyboardIdentifier="imageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5rm-N0-9r9" customClass="imageViewController" customModule="FIRSTAPP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vy8-Pm-hrh"/>
+                        <viewControllerLayoutGuide type="bottom" id="sMf-us-w6F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gn4-NR-EGU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landscape" translatesAutoresizingMaskIntoConstraints="NO" id="K0s-Pf-vnV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="Vvj-KZ-095"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="a8W-9N-zoO" appends="YES" id="kza-fV-B1O"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="K0s-Pf-vnV" firstAttribute="leading" secondItem="Gn4-NR-EGU" secondAttribute="leading" id="nny-IO-V3o"/>
+                            <constraint firstItem="K0s-Pf-vnV" firstAttribute="top" secondItem="Gn4-NR-EGU" secondAttribute="top" id="rQ7-EU-e8t"/>
+                            <constraint firstAttribute="trailing" secondItem="K0s-Pf-vnV" secondAttribute="trailing" id="vhk-ne-8yD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="K0s-Pf-vnV" id="XBE-eQ-tUI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7fy-96-6f5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="a8W-9N-zoO">
+                    <connections>
+                        <action selector="onImageTouched:" destination="5rm-N0-9r9" id="t0i-oQ-9OG"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="857" y="137"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="landscape" width="600" height="400"/>
+    </resources>
 </document>

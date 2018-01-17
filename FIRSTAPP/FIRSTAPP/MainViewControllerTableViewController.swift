@@ -10,6 +10,7 @@ import UIKit
 
 class MainViewControllerTableViewController: UITableViewController {
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,22 +62,24 @@ class MainViewControllerTableViewController: UITableViewController {
 
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-//    {
-//        switch (indexPath.row)
-//        {
-//            case 0:
-//                do {
-//                print("test")
-//                    if let UserDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "UserDetailVC") {
-//                        self.navigationController?.pushViewController(UserDetailVC, animated: true)  // use the story board id UserDetailVC
-//                    }
-//            }
-//            
-//            default: print("test")
-//        }
-//    }
-//    
+     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+     {
+        switch (indexPath.row)
+        {
+            case 0:
+                  if let UserDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "UserDetailVC") {
+                        self.navigationController?.pushViewController(UserDetailVC, animated: true)  // use the story board id UserDetailVC
+                  }
+
+            case 1:
+                    if let imageViewController = self.storyboard?.instantiateViewController(withIdentifier: "imageViewController") {
+                        self.navigationController?.pushViewController(imageViewController, animated: true)  // use the story board id UserDetailVC
+                    }
+            default:
+                print("test")
+       }
+   }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -124,3 +127,4 @@ class MainViewControllerTableViewController: UITableViewController {
     */
 
 }
+
