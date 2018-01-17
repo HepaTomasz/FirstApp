@@ -22,6 +22,7 @@ class MainViewControllerTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // some coment
         // Dispose of any resources that can be recreated.
     }
 
