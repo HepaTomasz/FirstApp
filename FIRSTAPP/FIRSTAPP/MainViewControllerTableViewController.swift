@@ -51,9 +51,9 @@ class MainViewControllerTableViewController: UITableViewController {
 
         switch (indexPath.row)
         { case 0:
-            cell.textLabel?.text = "First Row"
+            cell.textLabel?.text = "User Details"
         case 1:
-            cell.textLabel?.text = "Second Row"
+            cell.textLabel?.text = "Image Viewer"
         default:
             cell.textLabel?.text = "\(rowNumber). test"
 

@@ -34,10 +34,24 @@ class imageViewController: UIViewController {
     }
     */
 
-    @IBAction func onImageTouched(_ sender: Any) {
+    @IBAction func onImageTouched(_ sender: AnyObject) {
         
-        imageView.image = #imageLiteral(resourceName: "video-obrazek")
-      
-        // change the image to the people image
+        
+        var recognizer : UITapGestureRecognizer = sender as! UITapGestureRecognizer
+        var senderImageView = recognizer.view as! UIImageView
+
+        
+        let imagePeople = #imageLiteral(resourceName: "people")
+        let imageLandscape = #imageLiteral(resourceName: "landscape")
+        
+        if  senderImageView.image == imagePeople  // ==, != , <, >, <= , >=
+        {
+            imageView.image = imageLandscape
+        }
+        else
+        {
+            imageView.image = imagePeople
+        }
+     
     }
 }
