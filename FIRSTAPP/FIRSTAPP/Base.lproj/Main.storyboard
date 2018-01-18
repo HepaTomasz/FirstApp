@@ -37,7 +37,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9D-iN-Qtr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-609" y="143"/>
+            <point key="canvasLocation" x="-467" y="137"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nbz-nx-PEb">
@@ -53,7 +53,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMO-em-Ov3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1528" y="143"/>
+            <point key="canvasLocation" x="-1117" y="137"/>
         </scene>
         <!--Title-->
         <scene sceneID="tne-QT-ifu">
@@ -145,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="181" y="143"/>
+            <point key="canvasLocation" x="197" y="137"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="xiH-A9-kxu">
@@ -241,6 +241,38 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="856.52173913043487" y="136.95652173913044"/>
+        </scene>
+        <!--AnimationsVC-->
+        <scene sceneID="wYX-el-qIf">
+            <objects>
+                <viewController storyboardIdentifier="AnimationsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fy2-mW-x8F" userLabel="AnimationsVC" customClass="AnimationsVC" customModule="FIRSTAPP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gdg-Ko-YkP"/>
+                        <viewControllerLayoutGuide type="bottom" id="h5J-wz-fN1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1t9-sl-8na">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Move" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9I-c4-cum">
+                                <rect key="frame" x="137" y="277" width="74" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.99848310600000001" blue="0.1869945794" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <connections>
+                        <outlet property="myLabel" destination="c9I-c4-cum" id="DvP-IN-e3y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7PD-3F-iYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1515.9420289855075" y="136.95652173913044"/>
         </scene>
     </scenes>
     <resources>
