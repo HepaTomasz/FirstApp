@@ -100,7 +100,7 @@
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghe-kp-xJt">
                                         <rect key="frame" x="18" y="98" width="378" height="30"/>
-                                        <state key="normal" title="Please touch to choose a your birthday!"/>
+                                        <state key="normal" title="Please touch to choose your birthday!"/>
                                         <connections>
                                             <action selector="btnDateTouchedBy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9j6-AZ-mjv"/>
                                         </connections>
@@ -160,25 +160,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landscape" translatesAutoresizingMaskIntoConstraints="NO" id="K0s-Pf-vnV">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="Vvj-KZ-095"/>
+                                    <constraint firstAttribute="height" constant="280" id="sRh-Vf-9UV"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="a8W-9N-zoO" appends="YES" id="kza-fV-B1O"/>
                                 </connections>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="vUm-jt-Eqh">
+                                <rect key="frame" x="0.0" y="290" width="414" height="52"/>
+                                <subviews>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landscape" translatesAutoresizingMaskIntoConstraints="NO" id="6ol-cf-7aG">
+                                        <rect key="frame" x="0.0" y="0.0" width="111.33333333333333" height="52"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="rAZ-ES-BZ5" appends="YES" id="FQY-DH-9hy"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="people" translatesAutoresizingMaskIntoConstraints="NO" id="r5W-F8-Yjh">
+                                        <rect key="frame" x="151.33333333333334" y="0.0" width="111.33333333333334" height="52"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="ra1-Tw-Q4n" appends="YES" id="NKI-V2-GlD"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flowers" translatesAutoresizingMaskIntoConstraints="NO" id="Ra8-mL-KAn">
+                                        <rect key="frame" x="302.66666666666669" y="0.0" width="111.33333333333331" height="52"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="ybV-gW-u6U" appends="YES" id="5Ez-yg-6HK"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="1YM-da-qKC"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vUm-jt-Eqh" firstAttribute="top" secondItem="K0s-Pf-vnV" secondAttribute="bottom" constant="10" id="On7-a5-0mr"/>
+                            <constraint firstAttribute="trailing" secondItem="vUm-jt-Eqh" secondAttribute="trailing" id="h0z-Kz-38t"/>
                             <constraint firstItem="K0s-Pf-vnV" firstAttribute="leading" secondItem="Gn4-NR-EGU" secondAttribute="leading" id="nny-IO-V3o"/>
+                            <constraint firstItem="vUm-jt-Eqh" firstAttribute="leading" secondItem="Gn4-NR-EGU" secondAttribute="leading" id="qvL-nD-LWl"/>
                             <constraint firstItem="K0s-Pf-vnV" firstAttribute="top" secondItem="Gn4-NR-EGU" secondAttribute="top" id="rQ7-EU-e8t"/>
                             <constraint firstAttribute="trailing" secondItem="K0s-Pf-vnV" secondAttribute="trailing" id="vhk-ne-8yD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="flowersView" destination="Ra8-mL-KAn" id="j8q-lM-2MQ"/>
                         <outlet property="imageView" destination="K0s-Pf-vnV" id="XBE-eQ-tUI"/>
+                        <outlet property="landscapeTapped" destination="rAZ-ES-BZ5" id="6yk-Cj-PAs"/>
+                        <outlet property="landscapeView" destination="6ol-cf-7aG" id="1KE-EL-UqB"/>
+                        <outlet property="peopleView" destination="r5W-F8-Yjh" id="pgT-n8-qoy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fy-96-6f5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -187,11 +224,28 @@
                         <action selector="onImageTouched:" destination="5rm-N0-9r9" id="t0i-oQ-9OG"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="rAZ-ES-BZ5">
+                    <connections>
+                        <action selector="onStackViewImageTouched:" destination="5rm-N0-9r9" id="o90-c1-eEr"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ra1-Tw-Q4n">
+                    <connections>
+                        <action selector="onStackViewImageTouched:" destination="5rm-N0-9r9" id="5e5-NG-5YL"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ybV-gW-u6U">
+                    <connections>
+                        <action selector="onStackViewImageTouched:" destination="5rm-N0-9r9" id="ngp-xW-UYe"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="857" y="137"/>
+            <point key="canvasLocation" x="856.52173913043487" y="136.95652173913044"/>
         </scene>
     </scenes>
     <resources>
+        <image name="flowers" width="533" height="400"/>
         <image name="landscape" width="600" height="400"/>
+        <image name="people" width="384" height="209"/>
     </resources>
 </document>

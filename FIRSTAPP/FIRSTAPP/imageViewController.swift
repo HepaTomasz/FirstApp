@@ -10,7 +10,12 @@ import UIKit
 
 class imageViewController: UIViewController {
 
+    @IBOutlet var landscapeTapped: UITapGestureRecognizer!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var landscapeView: UIImageView!
+    @IBOutlet weak var peopleView: UIImageView!
+    @IBOutlet weak var flowersView: UIImageView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +42,8 @@ class imageViewController: UIViewController {
     @IBAction func onImageTouched(_ sender: AnyObject) {
         
         
-        var recognizer : UITapGestureRecognizer = sender as! UITapGestureRecognizer
-        var senderImageView = recognizer.view as! UIImageView
+        let recognizer : UITapGestureRecognizer = sender as! UITapGestureRecognizer
+        let senderImageView = recognizer.view as! UIImageView
 
         
         let imagePeople = #imageLiteral(resourceName: "people")
@@ -52,6 +57,30 @@ class imageViewController: UIViewController {
         {
             imageView.image = imagePeople
         }
-     
     }
+    
+    @IBAction func onStackViewImageTouched(_ sender: UITapGestureRecognizer)
+    {
+        let recognizer = sender
+        var senderImageView = recognizer.view as! UIImageView
+        
+        let imagePeople = peopleView
+        let imageLandscape = landscapeView
+        let imageFlowers = flowersView
+        
+        if senderImageView == imageLandscape {
+        imageView.image = #imageLiteral(resourceName: "landscape")
+        }
+        else if senderImageView == imagePeople{
+            imageView.image = #imageLiteral(resourceName: "people")
+        }
+         else {
+            imageView.image = #imageLiteral(resourceName: "flowers")
+        }
+       
+   
+    
+        }
+
+
 }
