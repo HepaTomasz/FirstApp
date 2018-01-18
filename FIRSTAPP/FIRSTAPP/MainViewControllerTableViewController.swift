@@ -54,6 +54,8 @@ class MainViewControllerTableViewController: UITableViewController {
             cell.textLabel?.text = "User Details"
         case 1:
             cell.textLabel?.text = "Image Viewer"
+        case 2:
+            cell.textLabel?.text = "Animations"
         default:
             cell.textLabel?.text = "\(rowNumber). test"
 
@@ -73,8 +75,13 @@ class MainViewControllerTableViewController: UITableViewController {
 
             case 1:
                     if let imageViewController = self.storyboard?.instantiateViewController(withIdentifier: "imageViewController") {
-                        self.navigationController?.pushViewController(imageViewController, animated: true)  // use the story board id UserDetailVC
+                        self.navigationController?.pushViewController(imageViewController, animated: true)  
                     }
+            case 2:
+                if let AnimationsVC = self.storyboard?.instantiateViewController(withIdentifier: "AnimationsVC") {
+                    self.navigationController?.pushViewController(AnimationsVC, animated: true)
+            }
+            
             default:
                 print("test")
        }

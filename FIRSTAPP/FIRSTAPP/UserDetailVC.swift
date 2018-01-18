@@ -33,6 +33,14 @@ class UserDetailVC: UIViewController {
     
     @IBAction func btnDateTouchedBy(_ sender: Any) {
          datePickerBirthday.isHidden = false
+        
+        
+        UIView.animate(withDuration: 2)
+        {
+            self.nameTxtField.frame.origin = CGPoint(x:100, y:300)
+            self.lastNameTxtField.frame.size = CGSize(width:10, height:100)
+            self.datePickerBirthday.alpha = 0
+        }
     }
     
     

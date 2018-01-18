@@ -62,20 +62,22 @@ class imageViewController: UIViewController {
     @IBAction func onStackViewImageTouched(_ sender: UITapGestureRecognizer)
     {
         let recognizer = sender
-        var senderImageView = recognizer.view as! UIImageView
+        let senderImageView = recognizer.view as! UIImageView
         
         let imagePeople = peopleView
         let imageLandscape = landscapeView
-        let imageFlowers = flowersView
         
-        if senderImageView == imageLandscape {
-        imageView.image = #imageLiteral(resourceName: "landscape")
+        if senderImageView == imageLandscape
+        {
+           imageView.image = #imageLiteral(resourceName: "landscape")
         }
-        else if senderImageView == imagePeople{
-            imageView.image = #imageLiteral(resourceName: "people")
+        else if senderImageView == imagePeople
+        {
+           imageView.image = #imageLiteral(resourceName: "people")
         }
-         else {
-            imageView.image = #imageLiteral(resourceName: "flowers")
+        else
+        {
+           imageView.image = #imageLiteral(resourceName: "flowers")
         }
        
    
