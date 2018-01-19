@@ -11,12 +11,14 @@ import UIKit
 
 class UserDetailVC: UIViewController {
     
+    @IBOutlet weak var Switch: UISwitch!
+    @IBOutlet weak var Slider: UISlider!
     @IBOutlet weak var NavigationBar: UINavigationItem!
     @IBOutlet weak var nameTxtField: UITextField!
     @IBOutlet weak var lastNameTxtField: UITextField!
     @IBOutlet weak var btnDate: UIButton!
     @IBOutlet weak var datePickerBirthday: UIDatePicker!
-    
+    @IBOutlet weak var passwordTxtField: UITextField!
     var birthday = Date()
     
     override func viewDidLoad() {
@@ -29,18 +31,10 @@ class UserDetailVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
     @IBAction func btnDateTouchedBy(_ sender: Any) {
          datePickerBirthday.isHidden = false
         
-        
-        UIView.animate(withDuration: 2)
-        {
-            self.nameTxtField.frame.origin = CGPoint(x:100, y:300)
-            self.lastNameTxtField.frame.size = CGSize(width:10, height:100)
-            self.datePickerBirthday.alpha = 0
-        }
     }
     
     
@@ -66,7 +60,19 @@ class UserDetailVC: UIViewController {
     {
         datePickerBirthday.isHidden = true
     }
-
+    var inputData: UIInputViewController?
+    @IBAction func saveButton(_ sender: UIButton) {
+        
+        print(nameTxtField.text)
+        print(lastNameTxtField.text)
+        print(passwordTxtField.text)
+        print(Slider.value)
+        print(Switch.isOn)
+        
+        print(datePickerBirthday.date)
+        
+    }
+    
 
 }
 

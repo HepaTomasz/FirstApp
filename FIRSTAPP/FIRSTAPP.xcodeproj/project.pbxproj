@@ -15,6 +15,7 @@
 		EB179897200CDF4800C6E398 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB179895200CDF4800C6E398 /* LaunchScreen.storyboard */; };
 		EB1798A2200CDF4800C6E398 /* FIRSTAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1798A1200CDF4800C6E398 /* FIRSTAPPTests.swift */; };
 		EB1798AD200CDF4800C6E398 /* FIRSTAPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1798AC200CDF4800C6E398 /* FIRSTAPPUITests.swift */; };
+		EB26A3C72012309D001FC839 /* TapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB26A3C62012309D001FC839 /* TapBarController.swift */; };
 		EBD9ADF9200E318B000F2D21 /* MainViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD9ADF8200E318B000F2D21 /* MainViewControllerTableViewController.swift */; };
 		EBF2A486200FA90E00B388F9 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF2A485200FA90E00B388F9 /* Media.xcassets */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		EB1798A8200CDF4800C6E398 /* FIRSTAPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FIRSTAPPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1798AC200CDF4800C6E398 /* FIRSTAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRSTAPPUITests.swift; sourceTree = "<group>"; };
 		EB1798AE200CDF4800C6E398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB26A3C62012309D001FC839 /* TapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarController.swift; sourceTree = "<group>"; };
 		EBD9ADF8200E318B000F2D21 /* MainViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		EBF2A485200FA90E00B388F9 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 				EB17988C200CDF4800C6E398 /* AppDelegate.swift */,
 				EB17988E200CDF4800C6E398 /* UserDetailVC.swift */,
 				EB179890200CDF4800C6E398 /* Main.storyboard */,
+				EB26A3C62012309D001FC839 /* TapBarController.swift */,
 				EB0C5A412010FFD400A86C42 /* AnimationsVC.swift */,
 				EB009AC4200F836B00375DC8 /* imageViewController.swift */,
 				EB179895200CDF4800C6E398 /* LaunchScreen.storyboard */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB17988F200CDF4800C6E398 /* UserDetailVC.swift in Sources */,
+				EB26A3C72012309D001FC839 /* TapBarController.swift in Sources */,
 				EB0C5A422010FFD400A86C42 /* AnimationsVC.swift in Sources */,
 				EB17988D200CDF4800C6E398 /* AppDelegate.swift in Sources */,
 				EB009AC5200F836B00375DC8 /* imageViewController.swift in Sources */,

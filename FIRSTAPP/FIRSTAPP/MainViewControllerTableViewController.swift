@@ -56,6 +56,8 @@ class MainViewControllerTableViewController: UITableViewController {
             cell.textLabel?.text = "Image Viewer"
         case 2:
             cell.textLabel?.text = "Animations"
+        case 3:
+            cell.textLabel?.text = "Colours"
         default:
             cell.textLabel?.text = "\(rowNumber). test"
 
@@ -80,6 +82,10 @@ class MainViewControllerTableViewController: UITableViewController {
             case 2:
                 if let AnimationsVC = self.storyboard?.instantiateViewController(withIdentifier: "AnimationsVC") {
                     self.navigationController?.pushViewController(AnimationsVC, animated: true)
+            }
+            case 3:
+            if let TapBarController = self.storyboard?.instantiateViewController(withIdentifier: "TapBarController") {
+                self.navigationController?.pushViewController(TapBarController, animated: true)
             }
             
             default:
