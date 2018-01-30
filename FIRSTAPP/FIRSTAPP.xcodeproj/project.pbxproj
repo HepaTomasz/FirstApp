@@ -16,6 +16,7 @@
 		EB1798A2200CDF4800C6E398 /* FIRSTAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1798A1200CDF4800C6E398 /* FIRSTAPPTests.swift */; };
 		EB1798AD200CDF4800C6E398 /* FIRSTAPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1798AC200CDF4800C6E398 /* FIRSTAPPUITests.swift */; };
 		EB26A3C72012309D001FC839 /* TapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB26A3C62012309D001FC839 /* TapBarController.swift */; };
+		EB86D53C20208965002EB2C8 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB86D53B20208965002EB2C8 /* WeatherVC.swift */; };
 		EBD9ADF9200E318B000F2D21 /* MainViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD9ADF8200E318B000F2D21 /* MainViewControllerTableViewController.swift */; };
 		EBF2A486200FA90E00B388F9 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF2A485200FA90E00B388F9 /* Media.xcassets */; };
 /* End PBXBuildFile section */
@@ -53,6 +54,7 @@
 		EB1798AC200CDF4800C6E398 /* FIRSTAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRSTAPPUITests.swift; sourceTree = "<group>"; };
 		EB1798AE200CDF4800C6E398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB26A3C62012309D001FC839 /* TapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarController.swift; sourceTree = "<group>"; };
+		EB86D53B20208965002EB2C8 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 		EBD9ADF8200E318B000F2D21 /* MainViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		EBF2A485200FA90E00B388F9 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				EB17988C200CDF4800C6E398 /* AppDelegate.swift */,
+				EB86D53B20208965002EB2C8 /* WeatherVC.swift */,
 				EB17988E200CDF4800C6E398 /* UserDetailVC.swift */,
 				EB179890200CDF4800C6E398 /* Main.storyboard */,
 				EB26A3C62012309D001FC839 /* TapBarController.swift */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB17988F200CDF4800C6E398 /* UserDetailVC.swift in Sources */,
+				EB86D53C20208965002EB2C8 /* WeatherVC.swift in Sources */,
 				EB26A3C72012309D001FC839 /* TapBarController.swift in Sources */,
 				EB0C5A422010FFD400A86C42 /* AnimationsVC.swift in Sources */,
 				EB17988D200CDF4800C6E398 /* AppDelegate.swift in Sources */,

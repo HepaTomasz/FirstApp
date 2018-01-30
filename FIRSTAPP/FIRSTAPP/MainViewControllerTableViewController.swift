@@ -38,7 +38,8 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 70
+        return 10
+    
     }
 
     
@@ -58,6 +59,8 @@ class MainTableViewController: UITableViewController {
             cell.textLabel?.text = "Animations"
         case 3:
             cell.textLabel?.text = "Colours"
+        case 4:
+            cell.textLabel?.text = "Weather"
         default:
             cell.textLabel?.text = "\(rowNumber). test"
 
@@ -86,6 +89,10 @@ class MainTableViewController: UITableViewController {
             case 3:
             if let TapBarController = self.storyboard?.instantiateViewController(withIdentifier: "TapBarController") {
                 self.navigationController?.pushViewController(TapBarController, animated: true)
+            }
+        case 4:
+            if let WeatherVC = self.storyboard?.instantiateViewController(withIdentifier: "WeatherVC") {
+                self.navigationController?.pushViewController(WeatherVC, animated: true)
             }
             
             default:
