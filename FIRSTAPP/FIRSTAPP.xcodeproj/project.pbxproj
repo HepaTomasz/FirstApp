@@ -18,6 +18,8 @@
 		EB26A3C72012309D001FC839 /* TapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB26A3C62012309D001FC839 /* TapBarController.swift */; };
 		EB86D53C20208965002EB2C8 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB86D53B20208965002EB2C8 /* WeatherVC.swift */; };
 		EBD9ADF9200E318B000F2D21 /* MainViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD9ADF8200E318B000F2D21 /* MainViewControllerTableViewController.swift */; };
+		EBDE287120221B5900A89BA5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDE287020221B5900A89BA5 /* MapViewController.swift */; };
+		EBDE287420221BAE00A89BA5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDE287320221BAD00A89BA5 /* MapKit.framework */; };
 		EBF2A486200FA90E00B388F9 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF2A485200FA90E00B388F9 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		EB26A3C62012309D001FC839 /* TapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarController.swift; sourceTree = "<group>"; };
 		EB86D53B20208965002EB2C8 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 		EBD9ADF8200E318B000F2D21 /* MainViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTableViewController.swift; sourceTree = "<group>"; };
+		EBDE287020221B5900A89BA5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		EBDE287320221BAD00A89BA5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EBF2A485200FA90E00B388F9 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBDE287420221BAE00A89BA5 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +96,7 @@
 				EB1798A0200CDF4800C6E398 /* FIRSTAPPTests */,
 				EB1798AB200CDF4800C6E398 /* FIRSTAPPUITests */,
 				EB17988A200CDF4800C6E398 /* Products */,
+				EBDE287220221BAD00A89BA5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +124,7 @@
 				EB179898200CDF4800C6E398 /* Info.plist */,
 				EBD9ADF8200E318B000F2D21 /* MainViewControllerTableViewController.swift */,
 				EBF2A485200FA90E00B388F9 /* Media.xcassets */,
+				EBDE287020221B5900A89BA5 /* MapViewController.swift */,
 			);
 			path = FIRSTAPP;
 			sourceTree = "<group>";
@@ -138,6 +145,14 @@
 				EB1798AE200CDF4800C6E398 /* Info.plist */,
 			);
 			path = FIRSTAPPUITests;
+			sourceTree = "<group>";
+		};
+		EBDE287220221BAD00A89BA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBDE287320221BAD00A89BA5 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +293,7 @@
 				EB17988D200CDF4800C6E398 /* AppDelegate.swift in Sources */,
 				EB009AC5200F836B00375DC8 /* imageViewController.swift in Sources */,
 				EBD9ADF9200E318B000F2D21 /* MainViewControllerTableViewController.swift in Sources */,
+				EBDE287120221B5900A89BA5 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
