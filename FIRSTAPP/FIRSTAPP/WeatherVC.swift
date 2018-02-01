@@ -9,7 +9,11 @@
 import UIKit
 import CoreLocation
 import MapKit
-class WeatherVC: UIViewController, CLLocationManagerDelegate {
+class WeatherVC: UIViewController, CLLocationManagerDelegate, MapViewVCDelegate {
+    func weatherLocation(update: MKPointAnnotation) {
+    
+    }
+
     
     @IBOutlet weak var titleLabelCity: UILabel!
     @IBOutlet weak var titleLabelTemp: UILabel!
@@ -25,9 +29,86 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
     var temperature : String?
     var city : String?
     let locationManager = CLLocationManager()
+    var currentLat : Double?
+    var currentLng : Double?
+    
+    
+    
+    var drop1 = UIImageView(image: #imageLiteral(resourceName: "rainDrop"))
+    var drop2 = UIImageView(image: #imageLiteral(resourceName: "rainDrop"))
+    var drop3 = UIImageView(image: #imageLiteral(resourceName: "rainDrop"))
+    var drop4 = UIImageView(image: #imageLiteral(resourceName: "rainDrop"))
+    var drop5 = UIImageView(image: #imageLiteral(resourceName: "rainDrop"))
+    var drop6 = UIImageView(image: #imageLiteral(resourceName: "rainDrop"))
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let width = self.view.frame.width
+        let diceRoll = Int(arc4random_uniform(UInt32(width)))
+        let diceRoll2 = Int(arc4random_uniform(UInt32(width)))
+        let diceRoll3 = Int(arc4random_uniform(UInt32(width)))
+        let diceRoll4 = Int(arc4random_uniform(UInt32(width)))
+        let diceRoll5 = Int(arc4random_uniform(UInt32(width)))
+        let diceRoll6 = Int(arc4random_uniform(UInt32(width)))
+        let durationDiceRoll1 = Int(arc4random_uniform(6))
+        let durationDiceRoll2 = Int(arc4random_uniform(6))
+        let durationDiceRoll3 = Int(arc4random_uniform(6))
+        let durationDiceRoll4 = Int(arc4random_uniform(6))
+        let durationDiceRoll5 = Int(arc4random_uniform(6))
+        let durationDiceRoll6 = Int(arc4random_uniform(6))
+        
+        drop1.frame = CGRect(x: diceRoll, y: 50, width: 40, height: 40)
+        
+        self.view.addSubview(drop1)
+    
+        UIView.animate(withDuration: TimeInterval(durationDiceRoll1), delay: 0.0, options: .curveEaseInOut, animations: {
+            self.drop1.center = CGPoint.init(x: diceRoll, y: 899)
+        }, completion: nil)
+        
+        drop2.frame = CGRect(x: diceRoll2, y: 50, width: 40, height: 40)
+        
+        self.view.addSubview(drop2)
+        
+        UIView.animate(withDuration: TimeInterval(durationDiceRoll2), delay: 0.0, options: .curveEaseInOut, animations: {
+            self.drop2.center = CGPoint.init(x: diceRoll2, y: 899)
+        }, completion: nil)
+        
+        drop3.frame = CGRect(x: diceRoll3, y: 50, width: 40, height: 40)
+        
+        self.view.addSubview(drop3)
+        
+        UIView.animate(withDuration: TimeInterval(durationDiceRoll3), delay: 0.0, options: .curveEaseInOut, animations: {
+            self.drop3.center = CGPoint.init(x: diceRoll3, y: 899)
+        }, completion: nil)
+        
+        drop4.frame = CGRect(x: diceRoll4, y: 50, width: 40, height: 40)
+        
+        self.view.addSubview(drop4)
+        
+        UIView.animate(withDuration: TimeInterval(durationDiceRoll4), delay: 0.0, options: .curveEaseInOut, animations: {
+            self.drop4.center = CGPoint.init(x: diceRoll4, y: 899)
+        }, completion: nil)
+        
+        drop5.frame = CGRect(x: diceRoll5, y: 50, width: 40, height: 40)
+        
+        self.view.addSubview(drop5)
+        
+        UIView.animate(withDuration: TimeInterval(durationDiceRoll5), delay: 0.0, options: .curveEaseInOut, animations: {
+            self.drop5.center = CGPoint.init(x: diceRoll5, y: 899)
+        }, completion: nil)
+        
+        drop6.frame = CGRect(x: diceRoll6, y: 50, width: 40, height: 40)
+        
+        self.view.addSubview(drop6)
+        
+        UIView.animate(withDuration: TimeInterval(durationDiceRoll6), delay: 0.0, options: .curveEaseInOut, animations: {
+            self.drop6.center = CGPoint.init(x: diceRoll6, y: 899)
+        }, completion: nil)
+        
+        // Rain drops end
         
         if CLLocationManager.locationServicesEnabled() {
             // configuration
@@ -72,8 +153,9 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
         print("Did location updates is called: \(lat) \(lng) ")
         //store the user location here to firebase or somewhere
         
-        
-        self.getWeatherFor(latitude: lat , longitude : lng)
+        self.currentLat = lat
+        self.currentLng = lng
+        self.getWeatherFor(latitude: self.currentLat! , longitude : self.currentLng!)
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -109,7 +191,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
                 self.titleLabelSpeed.textColor = UIColor.black
                 self.titleLabelWindDirection.textColor = UIColor.black
             }
-            else {
+            else if myTemperature! > 20 {
                 self.backgroundView.image = #imageLiteral(resourceName: "sunny")
             }
         }
@@ -213,10 +295,31 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func onBtnChangeLocationTouched(_ sender: Any) {
         
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MapVC") {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MapVC") as? MapViewController{
+            vc.delegate = self
+            if vc.currentUsedLocationAnotation == nil {
+                vc.currentUsedLocationAnotation = MKPointAnnotation()
+                vc.currentUsedLocationAnotation?.coordinate = CLLocationCoordinate2D(latitude: self.currentLat!, longitude: self.currentLng!)
+            }
+
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "second" {
+//            let destination = segue.destination as! MapViewController
+//            destination.delegate = self
+//        }
+//    }
+    
+    
+    func userChoosedNewLocation(longitude: Double, latitude: Double) {
+        // do something
+        
+         self.getWeatherFor(latitude: latitude , longitude: longitude)
+    }
+    
     
     /*
     // MARK: - Navigation

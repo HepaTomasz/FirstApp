@@ -11,6 +11,7 @@ import UIKit
 
 class UserDetailVC: UIViewController {
     
+    
     @IBOutlet weak var Switch: UISwitch!
     @IBOutlet weak var Slider: UISlider!
     @IBOutlet weak var NavigationBar: UINavigationItem!

@@ -9,9 +9,19 @@
 import UIKit
 import MapKit
 import CoreLocation
+
+protocol MapViewVCDelegate {
+    func userChoosedNewLocation(longitude:Double, latitude: Double)
+}
+
 class MapViewController: UIViewController {
     
+    
+    var delegate : MapViewVCDelegate?
     let locationManager = CLLocationManager()
+    var currentUsedLocationAnotation : MKPointAnnotation? = nil
+    
+    
     
     
     @IBOutlet weak var mapView: MKMapView!
@@ -19,9 +29,14 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (mapView.isUserLocationVisible == false)
-        {
+        
+        if (mapView.isUserLocationVisible == false) {
             mapView.showsUserLocation = true;
+        }
+        
+        if (self.currentUsedLocationAnotation != nil)
+        {
+            self.mapView.addAnnotation(self.currentUsedLocationAnotation!)
         }
         
         // Do any additional setup after loading the view.
@@ -31,29 +46,55 @@ class MapViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    
+       
         
         // Dispose of any resources that can be recreated.
     }
     
-        @IBAction func onMapTouched(_ sender: UIGestureRecognizer) {
+    @IBAction func onMapTouched(_ sender: UIGestureRecognizer) {
         
         let recognizer = sender
-        let touchedPoint = recognizer.location(in: self.view)
+        var touchedPoint = recognizer.location(in: self.view)
+        
+        touchedPoint.y = touchedPoint.y-64
+        
         let locationCoordinate = mapView.convert(touchedPoint, toCoordinateFrom: mapView)
         print("Tapped at lat: \(locationCoordinate.latitude) long: \(locationCoordinate.longitude)")
         
         
-        locationManager.startUpdatingLocation()
-        let annotation = MKPointAnnotation()
-        // Set the annotation by the lat and long variables
-        annotation.coordinate = CLLocationCoordinate2D(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude)
-        annotation.title = "User location"
-        self.mapView.addAnnotation(annotation)
+        var annotation : MKPointAnnotation? = nil
+    
+        if self.currentUsedLocationAnotation == nil
+        {
+            annotation = MKPointAnnotation()
+            self.mapView.addAnnotation(annotation!)
+            
+            
+        }
+        else
+        {
+            annotation = self.currentUsedLocationAnotation
+        }
         
+        locationManager.startUpdatingLocation()
+        
+        // Set the annotation by the lat and long variables
+        annotation?.coordinate = CLLocationCoordinate2D(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude)
+        annotation?.title = "Current Location"
+      
+        self.currentUsedLocationAnotation = annotation
+        
+        delegate?.userChoosedNewLocation(longitude: locationCoordinate.longitude, latitude: locationCoordinate.latitude)
+
     }
     
 
+//        delegate?.weatherLocation(update: currentUsedLocationAnotation!)
+//
+//        navigationController?.popViewController(animated: true)
+
+    
+    
     /*
     // MARK: - Navigation
 
@@ -65,3 +106,11 @@ class MapViewController: UIViewController {
     */
 
 }
+
+
+
+
+
+
+
+
