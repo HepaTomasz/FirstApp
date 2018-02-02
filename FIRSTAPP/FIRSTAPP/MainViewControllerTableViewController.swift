@@ -61,6 +61,8 @@ class MainTableViewController: UITableViewController {
             cell.textLabel?.text = "Colours"
         case 4:
             cell.textLabel?.text = "Weather"
+        case 5:
+            cell.textLabel?.text = "Game"
         default:
             cell.textLabel?.text = "\(rowNumber). test"
 
@@ -74,26 +76,29 @@ class MainTableViewController: UITableViewController {
         switch (indexPath.row)
         {
             case 0:
-                  if let UserDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "UserDetailVC") {
+                    if let UserDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "UserDetailVC") {
                         self.navigationController?.pushViewController(UserDetailVC, animated: true)  // use the story board id UserDetailVC
-                  }
-
+                    }
             case 1:
                     if let imageViewController = self.storyboard?.instantiateViewController(withIdentifier: "imageViewController") {
                         self.navigationController?.pushViewController(imageViewController, animated: true)  
                     }
             case 2:
-                if let AnimationsVC = self.storyboard?.instantiateViewController(withIdentifier: "AnimationsVC") {
-                    self.navigationController?.pushViewController(AnimationsVC, animated: true)
-            }
+                    if let AnimationsVC = self.storyboard?.instantiateViewController(withIdentifier: "AnimationsVC") {
+                        self.navigationController?.pushViewController(AnimationsVC, animated: true)
+                    }
             case 3:
-            if let TapBarController = self.storyboard?.instantiateViewController(withIdentifier: "TapBarController") {
-                self.navigationController?.pushViewController(TapBarController, animated: true)
-            }
-        case 4:
-            if let WeatherVC = self.storyboard?.instantiateViewController(withIdentifier: "WeatherVC") {
-                self.navigationController?.pushViewController(WeatherVC, animated: true)
-            }
+                    if let TapBarController = self.storyboard?.instantiateViewController(withIdentifier: "TapBarController") {
+                        self.navigationController?.pushViewController(TapBarController, animated: true)
+                    }
+            case 4:
+                    if let WeatherVC = self.storyboard?.instantiateViewController(withIdentifier: "WeatherVC") {
+                        self.navigationController?.pushViewController(WeatherVC, animated: true)
+                    }
+            case 5:
+                if let MyGame = self.storyboard?.instantiateViewController(withIdentifier: "MyGame") {
+                    self.navigationController?.pushViewController(MyGame, animated: true)
+                }
             
             default:
                 print("test")

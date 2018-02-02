@@ -69,7 +69,6 @@ class UserDetailVC: UIViewController {
         print(passwordTxtField.text)
         print(Slider.value)
         print(Switch.isOn)
-        
         print(datePickerBirthday.date)
         
     }

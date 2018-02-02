@@ -11,12 +11,12 @@ import UIKit
 class AnimationsVC: UIViewController {
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var animationView: UIView!
-    let diceRoll = Int(arc4random_uniform(414))
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(diceRoll)
+    
         // Do any additional setup after loading the view.
     }
 //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

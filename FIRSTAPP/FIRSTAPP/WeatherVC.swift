@@ -10,11 +10,8 @@ import UIKit
 import CoreLocation
 import MapKit
 class WeatherVC: UIViewController, CLLocationManagerDelegate, MapViewVCDelegate {
-    func weatherLocation(update: MKPointAnnotation) {
     
-    }
 
-    
     @IBOutlet weak var titleLabelCity: UILabel!
     @IBOutlet weak var titleLabelTemp: UILabel!
     @IBOutlet weak var titleLabelSpeed: UILabel!
@@ -32,83 +29,108 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, MapViewVCDelegate 
     var currentLat : Double?
     var currentLng : Double?
     
+    //var drops : Array<UIImageView> = []
+    var drops : [UIImageView] = []
+    
+    let countDrops = 10
     
     
-    var drop1 = UIImageView(image: #imageLiteral(resourceName: "rainDrop"))
-    var drop2 = UIImageView(image: #imageLiteral(resourceName: "rainDrop"))
-    var drop3 = UIImageView(image: #imageLiteral(resourceName: "rainDrop"))
-    var drop4 = UIImageView(image: #imageLiteral(resourceName: "rainDrop"))
-    var drop5 = UIImageView(image: #imageLiteral(resourceName: "rainDrop"))
-    var drop6 = UIImageView(image: #imageLiteral(resourceName: "rainDrop"))
-
+    
+    
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.animateDrops()
+        //Timer.scheduledTimer(timeInterval: 10, target: self,   selector: #selector(animateDrops), userInfo: nil, repeats: true)
         
-        let width = self.view.frame.width
-        let diceRoll = Int(arc4random_uniform(UInt32(width)))
-        let diceRoll2 = Int(arc4random_uniform(UInt32(width)))
-        let diceRoll3 = Int(arc4random_uniform(UInt32(width)))
-        let diceRoll4 = Int(arc4random_uniform(UInt32(width)))
-        let diceRoll5 = Int(arc4random_uniform(UInt32(width)))
-        let diceRoll6 = Int(arc4random_uniform(UInt32(width)))
-        let durationDiceRoll1 = Int(arc4random_uniform(6))
-        let durationDiceRoll2 = Int(arc4random_uniform(6))
-        let durationDiceRoll3 = Int(arc4random_uniform(6))
-        let durationDiceRoll4 = Int(arc4random_uniform(6))
-        let durationDiceRoll5 = Int(arc4random_uniform(6))
-        let durationDiceRoll6 = Int(arc4random_uniform(6))
         
-        drop1.frame = CGRect(x: diceRoll, y: 50, width: 40, height: 40)
+/*
+        
+        self.drops[0].frame = CGRect(x: diceRoll, y: -40, width: 40, height: 40)
         
         self.view.addSubview(drop1)
     
-        UIView.animate(withDuration: TimeInterval(durationDiceRoll1), delay: 0.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: TimeInterval(durationDiceRoll1), delay: TimeInterval(delayDiceRoll1), options: .repeat, animations: {
             self.drop1.center = CGPoint.init(x: diceRoll, y: 899)
         }, completion: nil)
         
-        drop2.frame = CGRect(x: diceRoll2, y: 50, width: 40, height: 40)
+        drop2.frame = CGRect(x: diceRoll2, y: -40, width: 40, height: 40)
         
         self.view.addSubview(drop2)
         
-        UIView.animate(withDuration: TimeInterval(durationDiceRoll2), delay: 0.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: TimeInterval(durationDiceRoll2), delay: TimeInterval(delayDiceRoll2), options: .repeat, animations: {
             self.drop2.center = CGPoint.init(x: diceRoll2, y: 899)
         }, completion: nil)
         
-        drop3.frame = CGRect(x: diceRoll3, y: 50, width: 40, height: 40)
+        drop3.frame = CGRect(x: diceRoll3, y: -40, width: 40, height: 40)
         
         self.view.addSubview(drop3)
         
-        UIView.animate(withDuration: TimeInterval(durationDiceRoll3), delay: 0.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: TimeInterval(durationDiceRoll3), delay: TimeInterval(delayDiceRoll3), options: .repeat , animations: {
             self.drop3.center = CGPoint.init(x: diceRoll3, y: 899)
         }, completion: nil)
         
-        drop4.frame = CGRect(x: diceRoll4, y: 50, width: 40, height: 40)
+        drop4.frame = CGRect(x: diceRoll4, y: -40, width: 40, height: 40)
         
         self.view.addSubview(drop4)
         
-        UIView.animate(withDuration: TimeInterval(durationDiceRoll4), delay: 0.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: TimeInterval(durationDiceRoll4), delay: TimeInterval(delayDiceRoll4), options: .repeat, animations: {
             self.drop4.center = CGPoint.init(x: diceRoll4, y: 899)
         }, completion: nil)
         
-        drop5.frame = CGRect(x: diceRoll5, y: 50, width: 40, height: 40)
+        drop5.frame = CGRect(x: diceRoll5, y: -40, width: 40, height: 40)
         
         self.view.addSubview(drop5)
         
-        UIView.animate(withDuration: TimeInterval(durationDiceRoll5), delay: 0.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: TimeInterval(durationDiceRoll5), delay: TimeInterval(delayDiceRoll5), options: .repeat, animations: {
             self.drop5.center = CGPoint.init(x: diceRoll5, y: 899)
         }, completion: nil)
         
-        drop6.frame = CGRect(x: diceRoll6, y: 50, width: 40, height: 40)
+        drop6.frame = CGRect(x: diceRoll6, y: -40, width: 40, height: 40)
         
         self.view.addSubview(drop6)
         
-        UIView.animate(withDuration: TimeInterval(durationDiceRoll6), delay: 0.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: TimeInterval(durationDiceRoll6), delay: TimeInterval(delayDiceRoll6), options: .repeat, animations: {
             self.drop6.center = CGPoint.init(x: diceRoll6, y: 899)
         }, completion: nil)
         
+        drop7.frame = CGRect(x: diceRoll7, y: -40, width: 40, height: 40)
+        
+        self.view.addSubview(drop7)
+        
+        UIView.animate(withDuration: TimeInterval(durationDiceRoll7), delay: TimeInterval(delayDiceRoll7), options: .repeat, animations: {
+            self.drop7.center = CGPoint.init(x: diceRoll7, y: 899)
+        }, completion: nil)
+        
+        drop8.frame = CGRect(x: diceRoll8, y: -40, width: 40, height: 40)
+        
+        self.view.addSubview(drop8)
+        
+        UIView.animate(withDuration: TimeInterval(durationDiceRoll8), delay: TimeInterval(delayDiceRoll8), options: .repeat, animations: {
+            self.drop8.center = CGPoint.init(x: diceRoll8, y: 899)
+        }, completion: nil)
+        
+        drop9.frame = CGRect(x: diceRoll9, y: -40, width: 40, height: 40)
+        
+        self.view.addSubview(drop9)
+        
+        UIView.animate(withDuration: TimeInterval(durationDiceRoll9), delay: TimeInterval(delayDiceRoll9), options: .repeat, animations: {
+            self.drop9.center = CGPoint.init(x: diceRoll9, y: 899)
+        }, completion: nil)
+        
+        drop10.frame = CGRect(x: diceRoll10, y: -40, width: 40, height: 40)
+        
+        self.view.addSubview(drop10)
+        
+        UIView.animate(withDuration: TimeInterval(durationDiceRoll10), delay: TimeInterval(delayDiceRoll10), options: .repeat, animations: {
+            self.drop10.center = CGPoint.init(x: diceRoll10, y: 899)
+        }, completion: nil) */
+        
         // Rain drops end
+        
         
         if CLLocationManager.locationServicesEnabled() {
             // configuration
@@ -130,10 +152,46 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, MapViewVCDelegate 
         }
         
         
-        
     }
     
     
+    @objc func animateDrops()
+    {
+        // set the drop image to the views
+        
+        
+        let width = self.view.frame.width
+        let height = self.view.frame.height
+        let dropSize : CGFloat = 40
+        var randXBeginArr : Array<CGFloat> = []
+        var randXEndArr : Array<Int> = []
+        var durations : Array<CGFloat> = []
+        var animDelayArr : Array<CGFloat> = []
+        
+        for index in 0..<self.countDrops {
+            self.drops.append(UIImageView(image: #imageLiteral(resourceName: "rainDrop")))
+            randXBeginArr.append(CGFloat(arc4random_uniform(UInt32(width))))
+            randXEndArr.append(Int(arc4random_uniform(UInt32(width))))
+            durations.append(randomCGFloat(min: 0.5, max: 5.0))
+            animDelayArr.append(randomCGFloat(min: 0.0, max: 10))
+            
+            self.drops[index].frame = CGRect(x: randXBeginArr[index], y: -dropSize, width: dropSize, height: dropSize)
+            
+            self.view.addSubview(self.drops[index])
+            
+            UIView.animate(withDuration: TimeInterval(durations[index]), delay: TimeInterval(animDelayArr[index]), options: .repeat, animations: {
+                self.drops[index].center = CGPoint.init(x: randXBeginArr[index], y: height + dropSize)
+            }, completion: nil)
+            
+        }
+    
+    
+    }
+    
+    
+    func randomCGFloat(min: CGFloat, max: CGFloat) -> CGFloat {
+        return CGFloat(Float(arc4random()) / Float(UINT32_MAX)) * (max - min) + min
+    }
     
 
     //this method will be called each time when a user change his location access preference.
@@ -145,7 +203,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, MapViewVCDelegate 
     }
 
 
-    //this method is called by the framework on         locationManager.requestLocation();
+    //this method is called by the framework on locationManager.requestLocation();
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
         let lat = location.coordinate.latitude
@@ -172,15 +230,13 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, MapViewVCDelegate 
         let myTemperature = Int(self.temperature!)
         DispatchQueue.main.async {
             if myTemperature! < 20 {
-                self.backgroundView.image = #imageLiteral(resourceName: "middleTemp")
+                self.backgroundView.image = #imageLiteral(resourceName: "badCondition")
                 self.txtLabelTemperature.textColor = UIColor.white
                 self.txtLabelWindDirection.textColor = UIColor.white
                 self.txtLabelWindSpeed.textColor = UIColor.white
                 self.titleLabelTemp.textColor = UIColor.white
                 self.titleLabelSpeed.textColor = UIColor.white
                 self.titleLabelWindDirection.textColor = UIColor.white
-                
-                
             }
             if myTemperature! < 0 {
                 self.backgroundView.image = #imageLiteral(resourceName: "winter")
@@ -194,15 +250,12 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, MapViewVCDelegate 
             else if myTemperature! > 20 {
                 self.backgroundView.image = #imageLiteral(resourceName: "sunny")
             }
-        }
-        
-        DispatchQueue.main.async {
+            
             self.txtLabelWindSpeed.text = self.windSpeed
             self.txtLabelWindDirection.text = self.windDirection
             self.txtLabelTemperature.text = self.temperature
             self.titleLabelCity.text = self.city
         }
-        
     }
     
     
