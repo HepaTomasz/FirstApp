@@ -18,6 +18,7 @@
 		EB26A3C72012309D001FC839 /* TapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB26A3C62012309D001FC839 /* TapBarController.swift */; };
 		EB52E1472024B4E90058BB49 /* MyGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB52E1462024B4E90058BB49 /* MyGame.swift */; };
 		EB86D53C20208965002EB2C8 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB86D53B20208965002EB2C8 /* WeatherVC.swift */; };
+		EB98F94C2028989B000CDC5B /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB98F94B2028989B000CDC5B /* DropView.swift */; };
 		EBD9ADF9200E318B000F2D21 /* MainViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD9ADF8200E318B000F2D21 /* MainViewControllerTableViewController.swift */; };
 		EBDE287120221B5900A89BA5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDE287020221B5900A89BA5 /* MapViewController.swift */; };
 		EBDE287420221BAE00A89BA5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDE287320221BAD00A89BA5 /* MapKit.framework */; };
@@ -59,6 +60,7 @@
 		EB26A3C62012309D001FC839 /* TapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarController.swift; sourceTree = "<group>"; };
 		EB52E1462024B4E90058BB49 /* MyGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGame.swift; sourceTree = "<group>"; };
 		EB86D53B20208965002EB2C8 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
+		EB98F94B2028989B000CDC5B /* DropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropView.swift; sourceTree = "<group>"; };
 		EBD9ADF8200E318B000F2D21 /* MainViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		EBDE287020221B5900A89BA5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EBDE287320221BAD00A89BA5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -128,6 +130,7 @@
 				EBD9ADF8200E318B000F2D21 /* MainViewControllerTableViewController.swift */,
 				EBF2A485200FA90E00B388F9 /* Media.xcassets */,
 				EBDE287020221B5900A89BA5 /* MapViewController.swift */,
+				EB98F94B2028989B000CDC5B /* DropView.swift */,
 			);
 			path = FIRSTAPP;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				EB009AC5200F836B00375DC8 /* imageViewController.swift in Sources */,
 				EBD9ADF9200E318B000F2D21 /* MainViewControllerTableViewController.swift in Sources */,
 				EBDE287120221B5900A89BA5 /* MapViewController.swift in Sources */,
+				EB98F94C2028989B000CDC5B /* DropView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
