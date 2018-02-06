@@ -1,0 +1,6 @@
+framework module SSCustomTabMenu {
+  umbrella header "SSCustomTabMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}

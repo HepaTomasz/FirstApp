@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import SSCustomTabMenu
+
+let MyDelegate = UIApplication.shared.delegate as! AppDelegate
+var navController:UINavigationController!
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let tabMenuStoryboard = UIStoryboard(name: "TabMenu", bundle: nil)
+        
+        let imageVC      = sb.instantiateViewController(withIdentifier: "imageViewController")
+        let animVC       = sb.instantiateViewController(withIdentifier: "AnimationsVC")
+        
+        let tabController = tabMenuStoryboard.instantiateViewController(withIdentifier: "TabMenuVC") as! TabMenuVC
+        
+        
         return true
     }
 

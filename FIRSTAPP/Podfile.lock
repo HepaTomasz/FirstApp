@@ -1,0 +1,23 @@
+PODS:
+  - Alamofire (4.6.0)
+  - SSCustomTabMenu (0.1.7):
+    - SSCustomTabMenu/CustomTabMenu (= 0.1.7)
+  - SSCustomTabMenu/CustomTabMenu (0.1.7):
+    - SSCustomTabMenu/CustomTabMenu/Helper (= 0.1.7)
+    - SSCustomTabMenu/CustomTabMenu/image (= 0.1.7)
+    - SSCustomTabMenu/CustomTabMenu/SSTabStoryBoard (= 0.1.7)
+  - SSCustomTabMenu/CustomTabMenu/Helper (0.1.7)
+  - SSCustomTabMenu/CustomTabMenu/image (0.1.7)
+  - SSCustomTabMenu/CustomTabMenu/SSTabStoryBoard (0.1.7)
+
+DEPENDENCIES:
+  - Alamofire
+  - SSCustomTabMenu
+
+SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  SSCustomTabMenu: a68a81fa2bef6519efbcba40f7db8df4eacd60a1
+
+PODFILE CHECKSUM: 6ea3d336e9e31f4dab6aed7e623a8daa91bfcc21
+
+COCOAPODS: 1.4.0

@@ -8,8 +8,18 @@
 
 import UIKit
 
-class MainTableViewController: UITableViewController {
 
+class MainTableViewController: UITableViewController  {
+
+    let flowingMenuTransitionManager = FlowingMenuTransitionManager()
+    
+    
+    let flowingMenuTransitionManager = FlowingMenuTransitionManager()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc                   = segue.destination
+        vc.transitioningDelegate = flowingMenuTransitionManager
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +29,13 @@ class MainTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
+//        // Add the pan screen edge gesture to the current view
+//        flowingMenuTransitionManager.setInteractivePresentationView(view)
+//
+//        // Add the delegate to respond to interactive transition events
+//        flowingMenuTransitionManager.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
